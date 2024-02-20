@@ -1,26 +1,18 @@
-pipeline {
+pipeline
+{
     agent none
-
-    stages {
-        stage('Back-end')
-        {
-            agent
-            {
-                docker{ image 'maven:3.8.1-adoptopenjdk-11'}
-            }
+    stages
+    {
+        // stage('Clone repository')
+        // {
+        //     echo "Clone Repo started"    
+        //     git https://github.com/clouddevaws1961/Jenkins.git
+        //     checkout scm
+        //     echo "Clone Repo Endated"
+        // }
+        stage ('build')
             steps {
-                sh 'mvn --version'
+                echo "Docker Build started"
             }
-        }
-        stage('Front-end')
-        {
-            agent
-            {
-                docker { image 'node:16-alpine' }
-            }
-            steps {
-                sh 'node --version'
-            }
-        }
     }
 }
