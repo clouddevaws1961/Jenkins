@@ -4,9 +4,8 @@ pipeline
     stages{
         stage ('build')
         {
-            agent none
             steps {
-                docker info
+                echo "Welcome to india"
             }
         }
     }
