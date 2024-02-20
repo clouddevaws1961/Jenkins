@@ -1,23 +1,22 @@
-pipeline{
+pipeline
+{
     agent any
     stages{
-        stage('Test')
+        stage('Clone repository')
         {
+            echo "Clone repositiory started "    
+            git https://github.com/clouddevaws1961/Jenkins.git
+            checkout scm
+        }
+        stage ('build')
+        {
+            agent none
             steps {
-                echo "Welcome to build process"
+                docker info
+                docker build -t sandy1961/sandydockerimage_1961:1
+                docker push
+                
             }
         }
     }
 }
-
-// pipeline{
-//     agent any
-//     stages{
-//         stage('Test')
-//         {
-//             steps {
-//                 echo "welcome"
-//             }
-//         }
-//     }
-// }
