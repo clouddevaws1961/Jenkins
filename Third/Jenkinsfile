@@ -2,9 +2,11 @@ pipeline{
     agent any
     stages{
         stage('Test')
+        {
             steps {
                 echo "Welcome to build process"
             }
+        }
     }
 }
 
