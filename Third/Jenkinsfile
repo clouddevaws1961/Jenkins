@@ -2,13 +2,6 @@ pipeline
 {
     agent any
     stages{
-        stage('Clone repository')
-        {
-            steps{
-                git https://github.com/clouddevaws1961/Jenkins.git
-                checkout scm
-            }
-        }
         stage ('build')
         {
             agent none
