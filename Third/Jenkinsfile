@@ -15,7 +15,7 @@ pipeline
     stage ('build')
             agent none
             steps {
-                docker build . -t sandy1961/sandydockerimage_1961:${BUILD_NUMBER}
+                docker build . -t sandy1961/sandydockerimage_1961:1
                 docker push
                 docker run -d  
             }
