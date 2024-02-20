@@ -1,18 +1,9 @@
-pipeline
-{
+pipeline {
     agent none
-    stages
-    {
-        // stage('Clone repository')
-        // {
-        //     echo "Clone Repo started"    
-        //     git https://github.com/clouddevaws1961/Jenkins.git
-        //     checkout scm
-        //     echo "Clone Repo Endated"
-        // }
+    stages{
         stage('build')
-            steps {
-                echo "Docker Build started"
+            agent none
+            steps{
             }
     }
 }
