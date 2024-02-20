@@ -15,6 +15,7 @@ pipeline
     stage ('build')
             agent none
             steps {
+                docker info
                 docker build -t sandy1961/sandydockerimage_1961:1
                 docker push
                 
