@@ -10,7 +10,7 @@ pipeline
         //     checkout scm
         //     echo "Clone Repo Endated"
         // }
-        stage ('build')
+        stage('build')
             steps {
                 echo "Docker Build started"
             }
