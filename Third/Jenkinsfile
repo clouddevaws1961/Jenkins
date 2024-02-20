@@ -4,9 +4,10 @@ pipeline
     stages{
         stage('Clone repository')
         {
-            echo "Clone repositiory started "    
-            git https://github.com/clouddevaws1961/Jenkins.git
-            checkout scm
+            steps{
+                git https://github.com/clouddevaws1961/Jenkins.git
+                checkout scm
+            }
         }
         stage ('build')
         {
