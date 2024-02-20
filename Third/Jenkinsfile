@@ -1,24 +1,19 @@
 pipeline
 {
     agent any
-
-    environment
+    stages
     {
-        IMAGE_TAG="${BUILD_NUMBER}"
-    }
-
-    stages{
-        stage('Clone repository') {
-        git https://github.com/clouddevaws1961/Jenkins.git
-        checkout scm
-    }
-    stage ('build')
-            agent none
+        stage('Clone repository')
+        {
+            echo "Clone Repo started"    
+            git https://github.com/clouddevaws1961/Jenkins.git
+            checkout scm
+            echo "Clone Repo Endated"
+        }
+        stage ('build')
+        
             steps {
-                docker info
-                docker build -t sandy1961/sandydockerimage_1961:1
-                docker push
-                
+                echo "Docker Build started"
             }
     }
 }
